@@ -1,0 +1,25 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: hsl(61, 70%, 52%);
+    border-radius: 24px;
+}
+
+.button:hover,
+.button:focus-visible {
+    cursor: pointer;
+    background-color:  hsl(61, 70%, 52%, 0.5);
+}
+
+.button:focus-visible {
+    outline: none;
+}
+
+.phrasing {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: hsl(202, 55%, 16%);
+}

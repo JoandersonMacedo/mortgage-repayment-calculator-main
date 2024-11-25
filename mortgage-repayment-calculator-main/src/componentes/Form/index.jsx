@@ -1,64 +1,28 @@
-import Button from '../Button';
-import ButtonSvg from '../ButtonSvg';
-import FieldsetRadio from '../FieldsetRadio';
-import Input from '../Input';
 import NoResults from '../NoResults';
-import Results from '../Results';
 import styles from './Form.module.css';
+import InputsContainer from '../InputsContainer';
+import { useMortgageCalculatorContext } from '../../hooks/useMortgageCalculatorContext';
+import Results from '../Results';
 
 function Form({ id }) {
-    const fildsetInputs =
-        [{
-            id: 'repayment',
-            value: 'repayment',
-            label: 'Repayment',
-        },
-        {
-            id: 'interest-only',
-            value: 'interest-only',
-            label: 'Interest Only',
-        }]
+
+    const {repayment, onSubmit, clearAll} = useMortgageCalculatorContext();
 
     return (
-        <form id={id}>
-            <Input
-                label={'Mortgage Amount'}
-                type={'nunber'}
-                id={'mortgage-amount'}
-                name={'mortgage-amount'}
-                required={true}
-            />
-            <Input
-                label={'Mortgage Term'}
-                type={'nunber'}
-                id={'mortgage-term'}
-                name={'mortgage-term'}
-                required={true}
-            />
-            <Input
-                label={'Interest Rate'}
-                type={'nunber'}
-                id={'interest-rate'}
-                name={'interest-rate'}
-                required={true}
-            />
-            <FieldsetRadio
-                id={'mortgage-type'}
-                legend={'Mortgage Type'}
-                inputs={fildsetInputs}
-                required={true}
-            />
-            <Button
-                icon={<ButtonSvg />}
-                phrasing={'Calculate Repayments'}
-            />
-            <aside>
-                <NoResults />
-                <Results
-                    outputFor={'monthly-repaymants mortgage-amount interest-rate mortgage-type'}
-                />
-            </aside>
-        </form>
+            <form id={id} onSubmit={event => onSubmit(event)} >
+                <div className={styles.container}>
+                    <section className={styles.section}>
+                        <div className={styles.agrupamento}>
+                            <h1 className={styles.titulo}>Mortgate Calculator</h1>
+                            <button type="reset" form={id} className={styles.clearAll} onClick={clearAll} >Clear All</button>
+                        </div>
+                        <InputsContainer />
+                    </section>
+                    <aside className={styles.aside}>
+                        {Object.keys(repayment).length === 0 ? (<NoResults />) : ( <Results />)}
+                    </aside>
+                </div>
+            </form >
     )
 }
 

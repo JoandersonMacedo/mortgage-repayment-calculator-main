@@ -1,15 +1,14 @@
+import { MortgageCalculatorProvider } from "../../contexts/MortgageCalculatorContext";
 import Form from "../Form";
 import styles from "./AppContainer.module.css";
 
-function AppContainer () {
+function AppContainer() {
     return (
         <main>
-            <div>
-                <div>
-                    <h1>Mortgate Calculator</h1>
-                    <button type="reset" form="mortgate-calculator" >Clear All</button>
-                </div>
-                <Form id={"mortgate-calculator"} />
+            <div className={styles.main}>
+                <MortgageCalculatorProvider>
+                    <Form id={"mortgate-calculator"} />
+                </MortgageCalculatorProvider>
             </div>
         </main>
     )

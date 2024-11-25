@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    color: hsl(203, 41%, 72%);
+}
+
+.title {
+    color: hsl(0, 0%, 100%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.instrucoes {
+    line-height: 150%;
+    margin-bottom: 2.5rem;
+}
+
+.results {
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-top: 4px solid hsl(61, 70%, 52%);
+    border-radius: 8px;
+}
+
+.results > hr {
+    border-color: rgba(255, 255, 255, 0.125);
+    margin: 2.375rem 0 2.3125rem 0;
+}
+
+.monthlyRepayments,
+.total {
+    display: flex;
+    flex-direction: column;
+}
+
+.monthlyRepayments {
+    gap: 1.125rem;
+}
+
+.monthlyRepayments > output {
+    color: hsl(61, 70%, 52%);
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.total {
+    gap: 0.875rem;
+}
+
+.total > output {
+    color: hsl(0, 0%, 100%);
+    font-size: 1.5rem;
+}

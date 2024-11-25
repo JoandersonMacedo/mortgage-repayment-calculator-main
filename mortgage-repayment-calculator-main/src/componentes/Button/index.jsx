@@ -1,10 +1,11 @@
 import styles from './Button.module.css';
 
 function Button({ icon, phrasing }) {
+
     return (
-        <button type="submit" >
+        <button className={styles.button} type="submit" >
             {icon}
-            <span>{phrasing}</span>
+            <span className={styles.phrasing}>{phrasing}</span>
         </button>
     )
 }

@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+
+    > legend {
+        display: contents;
+    }
+}
+
+.radiosContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}

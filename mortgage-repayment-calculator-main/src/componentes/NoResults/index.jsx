@@ -3,10 +3,10 @@ import NoResultsSvg from './NoResultsSvg';
 
 function NoResults() {
     return (
-        <div>
+        <div className={styles.container}>
             <NoResultsSvg />
-            <p>Results shown here</p>
-            <p>
+            <p className={styles.pLarge}>Results shown here</p>
+            <p className={styles.pSmall}>
                 Complete the form and click "calculate repayments" to see what your monthly repayments would be.
             </p>
         </div>

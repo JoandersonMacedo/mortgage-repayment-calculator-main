@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+
+    > legend {
+        display: contents;
+    }
+}
+
+.inputContainer {
+    display: flex;
+    font-size: 1.125rem;
+    align-items: center;
+    font-weight: 700;
+    border: 1px solid hsl(200, 26%, 54%);
+    border-radius: 6px;
+}
+
+.inputContainer:hover {
+    border-color: hsl(202, 55%, 16%);
+}
+
+.inputContainer:hover {
+    cursor: pointer;
+}
+
+.inputContainer:has(.input:focus) {
+    border-color: hsl(61, 70%, 52%);
+    .unidade {
+        background-color: hsl(61, 70%, 52%);
+        color: hsl(202, 55%, 16%);
+    }
+}
+
+.input,
+.unidade {
+    cursor: inherit;
+    line-height: normal;
+    padding: 0.75rem 1rem 0.8125rem 1rem;
+}
+
+.input {
+    width: 100%;
+    flex: 1;
+    color: hsl(202, 55%, 16%);
+    background-color: #FFFFFF;
+}
+
+.unidade {
+    background-color: hsl(202, 86%, 94%);
+}
